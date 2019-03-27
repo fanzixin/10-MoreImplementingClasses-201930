@@ -111,12 +111,18 @@ class Baby(object):
     def __init__(self, name):
         self.name = name
         print('Hello baby ' + self.name + '!')
+        self.feed_or_not = False     # Whether the baby is fed or not
         self.hours = 1
 
     def feed_baby(self):
         print('Thank you for feeding baby ' + self.name + '.')
+        self.feed_or_not = True
 
     def hour_passes(self):
+        if self.feed_or_not == True:
+            self.hours =1
+            self.feed_or_not = False
+
         if self.hours == 1:
             print('Baby ' + self.name + ' is sleeping.')
         elif self.hours == 2:
